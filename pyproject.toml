@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "comp-farmed"
+version = "0.1.0"
+description = ""
+authors = ["Spencer Graham <sl.graha@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.0"
+dotenv = "^0.0.5"
+web3 = "^5.11.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
