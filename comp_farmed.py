@@ -1,5 +1,6 @@
 import json
 from web3 import Web3, HTTPProvider
+from pycoingecko import CoinGeckoAPI
 
 import os
 from dotenv import load_dotenv
@@ -25,6 +26,13 @@ lens_abi = abi_json
 lens_contract = w3.eth.contract(address=lens, abi=lens_abi)
 
 # gets total COMP earned by a address: the sum of current balance and current accrued
+
+
+def comp_usd_price():
+    cg = CoinGeckoAPI()
+    result = cg.get_price(ids='compound-coin', vs_currencies='usd')
+    price = result['compound-coin']['usd'] * 10**9
+    return price
 
 
 def get_comp(address):
