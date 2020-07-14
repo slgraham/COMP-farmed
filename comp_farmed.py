@@ -30,8 +30,9 @@ lens_contract = w3.eth.contract(address=lens, abi=lens_abi)
 
 def comp_usd_price():
     cg = CoinGeckoAPI()
-    result = cg.get_price(ids='compound-coin', vs_currencies='usd')
-    price = result['compound-coin']['usd'] * 10**9
+    comp_id = 'compound-governance-token'
+    result = cg.get_price(ids=comp_id, vs_currencies='usd')
+    price = result[comp_id]['usd']
     return price
 
 
